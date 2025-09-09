@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İleri Seviye Veri Görselleştirme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>DataVisual</h1>
+                <p>Advanced Data Analysis and Visualization</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active">Dashboard</a></li>
+                    <li><a href="#" class="nav-link">Grafikler</a></li>
+                    <li><a href="#" class="nav-link">Raporlar</a></li>
+                    <li><a href="#" class="nav-link">Analiz</a></li>
+                    <li><a href="#" class="nav-link">Ayarlar</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+                <button class="user-btn">
+                    <span>Kullanıcı</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <div class="filters-section">
+            <div class="filter-group">
+                <label for="dateRange">Tarih Aralığı</label>
+                <select id="dateRange">
+                    <option value="7">Son 7 Gün</option>
+                    <option value="30" selected>Son 30 Gün</option>
+                    <option value="90">Son 3 Ay</option>
+                    <option value="365">Son 1 Yıl</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="dataType">Veri Türü</label>
+                <select id="dataType">
+                    <option value="sales">Satış Verileri</option>
+                    <option value="users">Kullanıcı Verileri</option>
+                    <option value="performance">Performans Verileri</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="chartType">Grafik Türü</label>
+                <select id="chartType">
+                    <option value="line">Çizgi Grafik</option>
+                    <option value="bar">Sütun Grafik</option>
+                    <option value="pie">Pasta Grafik</option>
+                </select>
+            </div>
+            <button id="applyFilters" class="apply-btn">
+                <span>Filtrele</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 7H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M7 12H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M11 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card summary-card">
+                <div class="card-header">
+                    <h3>Toplam Satış</h3>
+                    <div class="card-actions">
+                        <button class="icon-btn">⤢</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summary-value">₺142,856</div>
+                    <div class="summary-change positive">+12.4%</div>
+                    <div class="chart-container small">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card summary-card">
+                <div class="card-header">
+                    <h3>Kullanıcı Sayısı</h3>
+                    <div class="card-actions">
+                        <button class="icon-btn">⤢</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summary-value">24,589</div>
+                    <div class="summary-change positive">+8.2%</div>
+                    <div class="chart-container small">
+                        <canvas id="usersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card summary-card">
+                <div class="card-header">
+                    <h3>Ort. Oturum Süresi</h3>
+                    <div class="card-actions">
+                        <button class="icon-btn">⤢</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="summary-value">4d 12s</div>
+                    <div class="summary-change negative">-3.1%</div>
+                    <div class="chart-container small">
+                        <canvas id="sessionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card main-chart-card">
+                <div class="card-header">
+                    <h3>Detaylı Performans Analizi</h3>
+                    <div class="card-actions">
+                        <button class="icon-btn">⤢</button>
+                        <button class="icon-btn">📊</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="chart-container large">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card data-table-card">
+                <div class="card-header">
+                    <h3>Veri Özeti</h3>
+                    <div class="card-actions">
+                        <button class="icon-btn">⤢</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Kategori</th>
+                                <th>Değer</th>
+                                <th>Değişim</th>
+                                <th>Hedef</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Toplam Gelir</td>
+                                <td>₺142,856</td>
+                                <td class="positive">+12.4%</td>
+                                <td>₺135,000</td>
+                            </tr>
+                            <tr>
+                                <td>Yeni Kullanıcılar</td>
+                                <td>2,458</td>
+                                <td class="positive">+8.2%</td>
+                                <td>2,200</td>
+                            </tr>
+                            <tr>
+                                <td>Dönüşüm Oranı</td>
+                                <td>4.6%</td>
+                                <td class="positive">+0.8%</td>
+                                <td>4.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Ort. Sepet Tutarı</td>
+                                <td>₺286</td>
+                                <td class="negative">-2.3%</td>
+                                <td>₺295</td>
+                            </tr>
+                            <tr>
+                                <td>Müşteri Memnuniyeti</td>
+                                <td>4.7/5</td>
+                                <td class="positive">+0.2</td>
+                                <td>4.5/5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card pie-chart-card">
+                <div class="card-header">
+                    <h3>Kategori Dağılımı</h3>
+                    <div class="card-actions">
+                        <button class="icon-btn">⤢</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="chart-container medium">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2023 VeriGörsel - İleri Seviye Veri Görselleştirme Uygulaması</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.4/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.2.1/dist/chartjs-plugin-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="script.js"></script>
+</body>
+</html>
