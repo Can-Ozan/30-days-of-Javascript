@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoğraf Filtreleme Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fotoğraf Filtreleme Uygulaması</h1>
+        
+        <div class="upload-section">
+            <p>Bir fotoğraf yükleyerek filtrelemeye başlayın</p>
+            <input type="file" id="file-input" accept="image/*">
+            <button class="upload-btn" id="upload-btn">Fotoğraf Yükle</button>
+        </div>
+        
+        <div class="loading">
+            <div class="loading-spinner"></div>
+            <p>Fotoğraf işleniyor...</p>
+        </div>
+        
+        <div class="editor-section">
+            <div class="canvas-container">
+                <canvas id="image-canvas"></canvas>
+            </div>
+            
+            <div class="slider-container">
+                <label for="intensity-slider">Filtre Yoğunluğu: <span id="intensity-value">100%</span></label>
+                <input type="range" id="intensity-slider" class="slider" min="0" max="100" value="100">
+            </div>
+            
+            <div class="filters">
+                <div class="filter-btn" data-filter="original">Orijinal</div>
+                <div class="filter-btn" data-filter="grayscale">Siyah-Beyaz</div>
+                <div class="filter-btn" data-filter="sepia">Sepya</div>
+                <div class="filter-btn" data-filter="invert">Ters Çevir</div>
+                <div class="filter-btn" data-filter="brightness">Parlaklık</div>
+                <div class="filter-btn" data-filter="contrast">Kontrast</div>
+                <div class="filter-btn" data-filter="blur">Bulanıklaştır</div>
+                <div class="filter-btn" data-filter="vintage">Vintage</div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-btn download-btn" id="download-btn">İndir</button>
+                <button class="action-btn reset-btn" id="reset-btn">Sıfırla</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Fotoğraf Filtreleme Uygulaması &copy; 2023</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
