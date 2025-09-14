@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Önizleme Uygulaması - Gelişmiş</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>Markdown Önizleme Uygulaması</h1>
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="tr">Türkçe</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+            </div>
+            <p data-translate="header_desc">Sol tarafta Markdown yazın, sağ tarafta anında önizlemesini görün. Dosyaları sürükle bırak ile de yükleyebilirsiniz.</p>
+        </header>
+        
+        <div class="editor-preview">
+            <div class="editor-container">
+                <div class="toolbar">
+                    <span data-translate="editor_title">Markdown Girişi</span>
+                    <div class="buttons">
+                        <button id="clear-btn" class="toolbar-btn" title="İçeriği Temizle" data-translate="clear_btn">
+                            <i class="fas fa-trash"></i> <span class="btn-text">Temizle</span>
+                        </button>
+                        <button id="example-btn" class="toolbar-btn" title="Örnek İçerik Yükle" data-translate="example_btn">
+                            <i class="fas fa-file-alt"></i> <span class="btn-text">Örnek</span>
+                        </button>
+                        <button id="paste-btn" class="toolbar-btn" title="Yapıştır" data-translate="paste_btn">
+                            <i class="fas fa-paste"></i> <span class="btn-text">Yapıştır</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="drop-area" class="drop-area">
+                    <textarea id="editor" placeholder="Markdown metninizi buraya yazın... Veya bir dosyayı bu alana sürükleyip bırakın." data-translate="editor_placeholder"></textarea>
+                    <div class="drop-message">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p data-translate="drop_message">Dosyaları buraya sürükleyip bırakın</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-container">
+                <div class="toolbar">
+                    <span data-translate="preview_title">Önizleme</span>
+                    <div class="buttons">
+                        <button id="download-btn" class="toolbar-btn" title="Markdown İndir">
+                            <i class="fas fa-download"></i> <span class="btn-text" data-translate="download_btn">İndir</span>
+                        </button>
+                        <button id="fullscreen-btn" class="toolbar-btn" title="Tam Ekran Önizleme" data-translate="fullscreen_btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="preview"></div>
+            </div>
+        </div>
+        
+        <div class="download-options-panel">
+            <h3 data-translate="download_options">İndirme Seçenekleri</h3>
+            <div class="download-options">
+                <div class="option-group">
+                    <label data-translate="file_format">Dosya Formatı:</label>
+                    <select id="format-select">
+                        <option value="md">Markdown (.md)</option>
+                        <option value="txt">Metin (.txt)</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label data-translate="file_language">Dosya Dili:</label>
+                    <select id="file-lang-select">
+                        <option value="tr">Türkçe</option>
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+                <button id="confirm-download" class="toolbar-btn" data-translate="confirm_download">
+                    <i class="fas fa-download"></i> Dosyayı İndir
+                </button>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-sync-alt"></i>
+                <h3 data-translate="feature1_title">Gerçek Zamanlı Önizleme</h3>
+                <p data-translate="feature1_desc">Yazdığınız her şey anında önizlemede görüntülensin</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-file-upload"></i>
+                <h3 data-translate="feature2_title">Sürükle & Bırak</h3>
+                <p data-translate="feature2_desc">Markdown dosyalarını doğrudan sürükleyip bırakın</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-globe"></i>
+                <h3 data-translate="feature3_title">Çoklu Dil Desteği</h3>
+                <p data-translate="feature3_desc">Farklı dillerde içerik oluşturun ve indirin</p>
+            </div>
+        </div>
+        
+        <div class="animation-container">
+            <div class="animation-circle"></div>
+            <div class="animation-circle"></div>
+            <div class="animation-circle"></div>
+        </div>
+        
+        <footer>
+            <p>marked.js kütüphanesi ile güçlendirilmiştir</p>
+        </footer>
+    </div>
+
+    <!-- Fullscreen Preview Modal -->
+    <div id="fullscreen-preview" class="fullscreen-preview">
+        <div class="fullscreen-header">
+            <h3 data-translate="fullscreen_title">Markdown Önizleme</h3>
+            <button id="close-fullscreen" class="toolbar-btn" data-translate="close_btn">
+                <i class="fas fa-times"></i> <span class="btn-text">Kapat</span>
+            </button>
+        </div>
+        <div id="fullscreen-content" class="fullscreen-content"></div>
+    </div>
+
+    <!-- Toast Mesajı -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span class="toast-message">İşlem başarılı!</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
