@@ -1,72 +1,73 @@
-# Markdown Önizleme Uygulaması
+# Markdown Preview Application
 
-![Markdown Önizleyici](https://img.shields.io/badge/Markdown-Önizleyici-blue)
+![Markdown Previewer](https://img.shields.io/badge/Markdown-Önizleyici-blue)
 ![HTML](https://img.shields.io/badge/HTML-5-orange)
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![Multi-Language](https://img.shields.io/badge/Çoklu%20Dil-5%20dil-brightgreen)
 ![License](https://img.shields.io/badge/Lisans-MIT-green)
 
-Türkçe | [English](README_EN.md) | [Deutsch](README_DE.md) | [Français](README_FR.md) | [Español](README_ES.md)
+Turkish | [English](README_EN.md) | [Deutsch](README_DE.md) | [Français](README_FR.md) | [Español](README_ES.md)
 
-Modern, kullanıcı dostu ve çok dilli bir Markdown düzenleyici ve önizleyici uygulaması. Gerçek zamanlı önizleme, dosya sürükle-bırak, çoklu dil desteği ve daha birçok özellik sunar.
+A modern, user-friendly, and multilingual Markdown editor and previewer application. It offers real-time preview, drag-and-drop file support, multilingual support, and many more features.
 
-![Markdown Preview App](https://i.imgur.com/mockup-image.png)
 
-## ✨ Özellikler
+## ✨ Features
 
-- **🔁 Gerçek Zamanlı Önizleme**: Yazdığınız Markdown anında HTML'e dönüştürülür
-- **🌐 Çoklu Dil Desteği**: 5 farklı dil (Türkçe, İngilizce, Almanca, Fransızca, İspanyolca)
-- **📁 Dosya Sürükle & Bırak**: Markdown dosyalarını doğrudan editöre sürükleyip bırakabilirsiniz
-- **💾 Çoklu İndirme Seçenekleri**: Farklı dillerde ve formatlarda (.md, .txt) indirme
-- **📱 Responsive Tasarım**: Mobil cihazlarda da mükemmel çalışır
-- **🖥️ Tam Ekran Modu**: Önizlemeyi tam ekranda görüntüleyebilirsiniz
-- **🎨 Modern Arayüz**: Kullanıcı dostu ve estetik tasarım
-- **⚡ Yüksek Performans**: marked.js kütüphanesi ile hızlı dönüşüm
-- **📋 Panodan Yapıştırma**: Kolay içerik yapıştırma özelliği
+- **🔁 Real-Time Preview**: Your Markdown is instantly converted to HTML
+- **🌐 Multi-Language Support**: 5 different languages (Turkish, English, German, French, Spanish)
+- **📁 File Drag & Drop**: Drag and drop Markdown files directly into the editor
+- **💾 Multiple Download Options**: Download in different languages and formats (.md, .txt)
+- **📱 Responsive Design**: Works perfectly on mobile devices
+- **🖥️ Full Screen Mode**: View the preview in full screen
+- **🎨 Modern Interface**: User-friendly and aesthetically pleasing design
+- **⚡ High Performance**: Fast conversion with the marked.js library
+- **📋 Paste from Clipboard**: Easy content pasting feature
 
-## 🚀 Hızlı Başlangıç
 
-### Ön Koşullar
+## 🚀 Quick Start
 
-Bu projeyi çalıştırmak için aşağıdaki yazılımlara ihtiyacınız var:
+### Prerequisites
 
-- Modern bir web tarayıcısı (Chrome, Firefox, Safari, Edge)
-- İnternet bağlantısı (CDN'den kütüphaneler yüklenmesi için)
+You need the following software to run this project:
 
-### Kurulum
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Internet connection (for loading libraries from the CDN)
 
-1. Depoyu klonlayın veya indirin:
+### Setup
+
+1. Clone or download the repository:
 
 ```bash
-git clone https://github.com/kullanici-adi/markdown-onizleme.git
-cd markdown-onizleme
+git clone https://github.com/Can-Ozan/30-days-of-Javascript/Day-8-Markdown-Preview-Application.git
+
+cd 30-days-of-Javascript/Day-8-Markdown-Preview-Application
 ```
 
-2. Dosyaları bir web sunucusunda barındırın veya doğrudan açın:
+2. Host the files on a web server or open them directly:
 
 ```bash
-# Yerel sunucu ile çalıştırma (Python)
+# Run with a local server (Python)
 python -m http.server 8000
 
-# Veya Node.js ile
+# Or with Node.js
 npx http-server
 
-# Veya doğrudan dosyayı açın
+# Or open the file directly
 open index.html
 ```
 
-3. Tarayıcınızda `http://localhost:8000` (veya ilgili port) adresine gidin
+3. Go to `http://localhost:8000` (or the relevant port) in your browser.
 
-### Docker ile Çalıştırma
+### Running with Docker
 
-Projeyi Docker ile de çalıştırabilirsiniz:
+You can also run the project with Docker:
 
 ```bash
-# Docker image oluşturma
+# Build the Docker image
 docker build -t markdown-preview .
 
-# Container çalıştırma
+# Run the container
 docker run -p 8080:80 markdown-preview
 ```
 
@@ -77,212 +78,206 @@ COPY . /usr/share/nginx/html
 EXPOSE 80
 ```
 
-## 🛠️ Teknolojiler
+## 🛠️ Technologies
 
-- **HTML5**: Yapısal elemanlar ve semantik işaretleme
-- **CSS3**: Modern stillendirme, Flexbox/Grid, animasyonlar
-- **JavaScript (ES6+)**: Dinamik işlevsellik ve etkileşim
-- **marked.js**: Markdown'dan HTML'e dönüşüm kütüphanesi
-- **Font Awesome**: İkon seti
+- **HTML5**: Structural elements and semantic markup
+- **CSS3**: Modern styling, Flexbox/Grid, animations
+- **JavaScript (ES6+)**: Dynamic functionality and interaction
+- **marked.js**: Markdown to HTML conversion library
+- **Font Awesome**: Icon set
 
-## 📦 Bağımlılıklar
+## 📦 Dependencies
 
-Proje şu harici kaynakları kullanır:
+The project uses the following external resources:
 
 ```html
-<!-- CDN üzerinden yüklenen kütüphaneler -->
+<!-- Libraries loaded via CDN -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 ```
 
-## 🎯 Kullanım
+## 🎯 Usage
 
-### Temel Kullanım
+### Basic Usage
 
-1. Sol taraftaki editöre Markdown metninizi yazın
-2. Sağ tarafta otomatik olarak oluşturulan HTML önizlemesini görün
-3. Dil değiştirmek için sağ üstteki dil seçiciyi kullanın
+1. Write your Markdown text in the editor on the left
+2. View the automatically generated HTML preview on the right
+3. Use the language selector in the top right to change the language
 
-### Dosya İşlemleri
+### File Operations
 
-- **Dosya Yükleme**: `.md` dosyalarını doğrudan editör alanına sürükleyip bırakın
-- **İndirme**: "İndir" butonuna tıklayarak farklı dillerde ve formatlarda indirin
-- **Panodan Yapıştırma**: "Yapıştır" butonu ile panodaki içeriği editöre ekleyin
+- **File Upload**: Drag and drop `.md` files directly into the editor area
+- **Download**: Click the “Download” button to download in different languages and formats
+- **Paste from Clipboard**: Add content from the clipboard to the editor using the “Paste” button
 
-### Klavye Kısayolları
+### Keyboard Shortcuts
 
-- `Tab`: Girinti ekleme
-- `Ctrl/Cmd + Z`: Geri alma
-- `Ctrl/Cmd + Y`: İleri alma
-- `Ctrl/Cmd + S`: İndirme dialogunu açma (tarayıcıya göre değişir)
+- `Tab`: Add indentation
+- `Ctrl/Cmd + Z`: Undo
+- `Ctrl/Cmd + Y`: Redo
+- `Ctrl/Cmd + S`: Open the download dialog (varies by browser)
 
-## 🌐 Çoklu Dil Desteği
+## 🌐 Multi-Language Support
 
-Uygulama aşağıdaki dilleri destekler:
+The application supports the following languages:
 
-| Dil | Kod | Durum |
+| Language | Code | Status |
 |------|-----|-------|
-| Türkçe | `tr` | ✅ Tam destek |
-| İngilizce | `en` | ✅ Tam destek |
-| Almanca | `de` | ✅ Tam destek |
-| Fransızca | `fr` | ✅ Tam destek |
-| İspanyolca | `es` | ✅ Tam destek |
+| Turkish | `tr` | ✅ Full support |
+| English | `en` | ✅ Full support |
+| German | `de` | ✅ Full support |
+| French | `fr` | ✅ Full support |
+| Spanish | `es` | ✅ Full support |
 
-## 📁 Proje Yapısı
+## 📁 Project Structure
 
 ```
 markdown-onizleme/
 │
-├── index.html          # Ana HTML dosyası
-├── style.css           # Stil dosyası
-├── script.js           # JavaScript dosyası
-├── README.md           # Bu dosya (Türkçe)
-├── README_EN.md        # İngilizce dokümantasyon
-├── README_DE.md        # Almanca dokümantasyon
-├── README_FR.md        # Fransızca dokümantasyon
-├── README_ES.md        # İspanyolca dokümantasyon
-├── LICENSE             # Lisans dosyası
+├── index.html          # Main HTML file
+├── style.css           # Style sheet
+├── script.js           # JavaScript file
+├── README.md           # This file (Turkish)
+├── README_EN.md        # English documentation
+├── README_DE.md        # German documentation
+├── README_FR.md        # French documentation
+├── README_ES.md        # Spanish documentation
+├── LICENSE             # License file
 └── .github/
     └── workflows/
-        └── deploy.yml  # GitHub Pages deployment yapılandırması
+        └── deploy.yml  # GitHub Pages deployment configuration
 ```
 
-## 🔧 Geliştirme
+## 🔧 Development
 
-### Yerel Geliştirme Ortamı Kurulumu
+### Setting Up a Local Development Environment
 
-1. Depoyu klonlayın:
+1. Clone the repository:
 ```bash
-git clone https://github.com/kullanici-adi/markdown-onizleme.git
+git clone https://github.com/Can-Ozan/30-days-of-Javascript/Day-8-Markdown-Preview-Application.git
+
 ```
 
-2. Geliştirme sunucusu başlatın:
+2. Start the development server:
 ```bash
-# Live Server (VSCode eklentisi) önerilir
-# veya
+# Live Server (VSCode extension) is recommended
+# or
 npx live-server
 ```
 
-### Yeni Dil Ekleme
+### Adding a New Language
 
-1. `script.js` dosyasındaki `translations` nesnesine yeni dil ekleyin
-2. `exampleContent` nesnesine yeni dil için örnek içerik ekleyin
-3. HTML'e dil seçici için yeni seçenek ekleyin
-4. Yeni dil için README dosyası oluşturun
+1. Add the new language to the `translations` object in the `script.js` file
+2. Add sample content for the new language to the `exampleContent` object
+3. Add a new option for the language selector in HTML
+4. Create a README file for the new language
 
-Örnek dil ekleme:
+Example language addition:
 ```javascript
-// script.js içinde
+// inside script.js
 const translations = {
-    // ... mevcut diller
-    it: { // İtalyanca
-        header_desc: "Scrivi Markdown a sinistra, vedi l'anteprima istantanea a destra.",
-        // ... diğer çeviriler
+    // ... existing languages
+    it: { // Italian
+        header_desc: “Scrivi Markdown a sinistra, vedi l'anteprima istantanea a destra.”,
+        // ... other translations
     }
 };
 
 const exampleContent = {
-    // ... mevcut diller
-    it: `# Benvenuto nell'app Anteprima Markdown!...`
+    // ... existing languages
+    it: `# Welcome to the Markdown Preview app!...`
 };
 ```
 
 ## 🚀 Deployment
 
-### GitHub Pages ile Deployment
+### Deployment with GitHub Pages
 
-1. Repository ayarlarından GitHub Pages'i etkinleştirin
-2. `gh-pages` branch'ı veya `main` branch'ın `/docs` klasörünü seçin
+1. Enable GitHub Pages in your repository settings
+2. Select the `gh-pages` branch or the `/docs` folder in the `main` branch
 
-Alternatif olarak:
+Alternatively:
 ```bash
-# gh-pages paketi ile
+# With the gh-pages package
 npm install --save-dev gh-pages
 npm run deploy
 ```
 
-### Netlify ile Deployment
+### Deployment with Netlify
 
-1. Dosyaları GitHub'a push edin
-2. Netlify'da yeni site oluşturun ve GitHub repository'sini bağlayın
-3. Build ayarlarını yapılandırın:
-   - Build command: (boş bırakın)
+1. Push files to GitHub
+2. Create a new site on Netlify and connect the GitHub repository
+3. Configure the build settings:
+   - Build command: (leave blank)
    - Publish directory: `.`
 
-### Vercel ile Deployment
+### Deployment with Vercel
 
-1. Vercel'i GitHub hesabınıza bağlayın
-2. İlgili repository'i seçin
-3. Varsayılan ayarlarla deploy edin
+1. Connect Vercel to your GitHub account
+2. Select the relevant repository
+3. Deploy with the default settings
 
-## 🤝 Katkıda Bulunma
+## 🤝 Contributing
 
-Katkıda bulunmak isterseniz:
+If you want to contribute:
 
-1. Bu depoyu fork edin
-2. Yeni bir özellik dalı oluşturun (`git checkout -b feature/yeni-ozellik`)
-3. Değişikliklerinizi commit edin (`git commit -am 'Yeni özellik eklendi: XYZ'`)
-4. Dalınıza push edin (`git push origin feature/yeni-ozellik`)
-5. Bir Pull Request oluşturun
+1. Fork this repository
+2. Create a new feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am ‘New feature added: XYZ’)
+4. Push to your branch (`git push origin feature/new-feature`)
+5. Create a Pull Request
 
-### Katkı Yönergeleri
+### Contribution Guidelines
 
-- Kod stil kurallarına uyun
-- Yeni özellikler için testler ekleyin
-- Dokümantasyonu güncelleyin
-- Anlamlı commit mesajları kullanın
+- Follow the code style guidelines
+- Add tests for new features
+- Update the documentation
+- Use meaningful commit messages
 
-## 📝 Lisans
+## 📝 License
 
-Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
+This project is licensed under the MIT License. For more information, see the `LICENSE` file.
 
-## 🐛 Hata Bildirimleri
+## 🐛 Bug Reports
 
-Hata bulursanız lütfen [issue tracker](https://github.com/kullanici-adi/markdown-onizleme/issues) üzerinden bildirin. Mümkünse:
+If you find a bug, please report it via the [issue tracker](https://github.com/Can-Ozan/30-days-of-Javascript/Day-8-Markdown-Preview-Application/issues). If possible:
 
-1. Hatayı nasıl reproduce edeceğimizi açıklayın
-2. Beklenen ve gerçekleşen davranışı belirtin
-3. Ekran görüntüsü veya kod örneği ekleyin
-4. Kullandığınız tarayıcı ve işletim sistemi bilgilerini paylaşın
+1. Explain how to reproduce the bug
+2. Describe the expected and actual behavior
+3. Include a screenshot or code example
+4. Share your browser and operating system information
 
-## 💡 Bilinen Sorunlar
+## 💡 Known Issues
 
-- Internet Explorer desteklenmemektedir
-- Çok büyük dosyalar (>5MB) performans sorunlarına neden olabilir
-- Bazı tarayıcılarda panoya erişim için kullanıcı izni gerekebilir
+- Internet Explorer is not supported
+- Very large files (>5MB) may cause performance issues
+- Some browsers may require user permission to access the clipboard
 
-## 🔮 Gelecek Güncellemeler
+## 🔮 Future Updates
 
-- [ ] Markdown syntax vurgulama
-- [ ] Temalar ve koyu mod desteği
-- [ ] Yerel depolama ile otomatik kaydetme
-- [ ] Dışa aktarma seçenekleri (PDF, HTML)
-- [ ] Eklenti sistemi
-- [ ] Bulut senkronizasyonu
-- [ ] Kullanıcı hesabı entegrasyonu
+- [ ] Markdown syntax highlighting
+- [ ] Themes and dark mode support
+- [ ] Auto-save with local storage
+- [ ] Export options (PDF, HTML)
+- [ ] Plugin system
+- [ ] Cloud synchronization
+- [ ] User account integration
 
-## 📞 İletişim
+## 📞 Contact
 
-Proje ile ilgili sorularınız için:
+For questions about the project:
 
-- **E-posta**: ornek@email.com
-- **GitHub Issues**: [Issue Tracker](https://github.com/kullanici-adi/markdown-onizleme/issues)
-- **Discord**: [Sunucumuz](https://discord.gg/orneklink)
+- **Email**: yusufcanozan9@gmail.com
+- **GitHub Issues**: [Issue Tracker](https://github.com/kullanici-adi/30-days-of-Javascript/Day-8-Markdown-Preview-Application/issues)
 
-## 🙏 Teşekkürler
+## 🙏 Thank you
 
-- [marked.js](https://github.com/markedjs/marked) ekibine Markdown parser için
-- [Font Awesome](https://fontawesome.com/) ekibine ikonlar için
-- Tüm katkıda bulunanlara
-
----
-
-**Not**: Bu proje eğitim amaçlı olarak geliştirilmiştir ve profesyonel kullanım için ek özellikler gerektirebilir.
+- The [marked.js](https://github.com/markedjs/marked) team for the Markdown parser
+- The [Font Awesome](https://fontawesome.com/) team for the icons
+- All contributors
 
 ---
 
-<div align="center">
+**Note**: This project was developed for educational purposes and may require additional features for professional use.
 
-**Markdown Önizleme Uygulaması** - [Canlı Demo](https://kullanici-adi.github.io/markdown-onizleme) · [Raporla Hata](https://github.com/kullanici-adi/markdown-onizleme/issues) · [İstek Özellik](https://github.com/kullanici-adi/markdown-onizleme/issues/new)
-
-</div>
+---
