@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özelleştirilebilir Form Oluşturucu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Özelleştirilebilir Form Oluşturucu</h1>
+        </header>
+        
+        <div class="builder-container">
+            <div class="toolbox">
+                <h2>Form Elemanları</h2>
+                <div class="toolbox-items">
+                    <div class="toolbox-item" data-type="text">
+                        <span>Metin Alanı</span>
+                    </div>
+                    <div class="toolbox-item" data-type="email">
+                        <span>E-posta</span>
+                    </div>
+                    <div class="toolbox-item" data-type="number">
+                        <span>Sayı</span>
+                    </div>
+                    <div class="toolbox-item" data-type="textarea">
+                        <span>Metin Kutusu</span>
+                    </div>
+                    <div class="toolbox-item" data-type="select">
+                        <span>Açılır Liste</span>
+                    </div>
+                    <div class="toolbox-item" data-type="checkbox">
+                        <span>Onay Kutusu</span>
+                    </div>
+                    <div class="toolbox-item" data-type="radio">
+                        <span>Radyo Düğmesi</span>
+                    </div>
+                    <div class="toolbox-item" data-type="date">
+                        <span>Tarih</span>
+                    </div>
+                    <div class="toolbox-item" data-type="file">
+                        <span>Dosya Yükleme</span>
+                    </div>
+                    <div class="toolbox-item" data-type="button">
+                        <span>Buton</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-canvas">
+                <h2>Form Tasarım Alanı</h2>
+                <div id="form-preview" class="form-preview">
+                    <p class="empty-message">Form elemanlarını buraya sürükleyin</p>
+                </div>
+            </div>
+            
+            <div class="properties-panel">
+                <h2>Özellikler</h2>
+                <div id="properties-content" class="properties-content">
+                    <p class="empty-message">Bir form elemanı seçin</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button id="preview-btn" class="btn">Formu Önizle</button>
+            <button id="export-btn" class="btn">HTML Kodunu Al</button>
+            <button id="clear-btn" class="btn btn-danger">Formu Temizle</button>
+        </div>
+    </div>
+    
+    <!-- Önizleme Modalı -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Form Önizleme</h2>
+            <div id="preview-form"></div>
+        </div>
+    </div>
+    
+    <!-- HTML Kod Modalı -->
+    <div id="code-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>HTML Kodu</h2>
+            <textarea id="html-code" readonly></textarea>
+            <button id="copy-btn" class="btn">Kodu Kopyala</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
