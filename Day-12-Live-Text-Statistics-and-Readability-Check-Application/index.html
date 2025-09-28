@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canlı Metin İstatistikleri ve Okunabilirlik Kontrolü</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Canlı Metin İstatistikleri ve Okunabilirlik Kontrolü</h1>
+        
+        <div class="input-section">
+            <label for="text-input">Metninizi yazın:</label>
+            <textarea id="text-input" placeholder="Metninizi buraya yazın..."></textarea>
+        </div>
+        
+        <div class="stats-section">
+            <h2>İstatistikler</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Kelime Sayısı</h3>
+                    <p id="word-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Karakter Sayısı</h3>
+                    <p id="char-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Cümle Sayısı</h3>
+                    <p id="sentence-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Paragraf Sayısı</h3>
+                    <p id="paragraph-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Ortalama Kelime Uzunluğu</h3>
+                    <p id="avg-word-length">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Tahmini Okuma Süresi</h3>
+                    <p id="reading-time">0 dk</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="readability-section">
+            <h2>Okunabilirlik Analizi</h2>
+            <div class="readability-card">
+                <h3>Flesch-Kincaid Okunabilirlik Puanı</h3>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="readability-score">0</span>
+                    </div>
+                    <div class="score-description">
+                        <p id="readability-description">Metin girilmedi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
