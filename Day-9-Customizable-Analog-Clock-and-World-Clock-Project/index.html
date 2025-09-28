@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Saat ve Dünya Saati</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Analog Saat ve Dünya Saati</h1>
+            <div class="theme-toggle">
+                <button id="themeBtn">Koyu Mod</button>
+            </div>
+        </header>
+        
+        <main>
+            <section class="analog-clock-section">
+                <h2>Analog Saat</h2>
+                <div class="clock-container">
+                    <div class="clock">
+                        <div class="clock-face">
+                            <div class="hand hour-hand"></div>
+                            <div class="hand min-hand"></div>
+                            <div class="hand second-hand"></div>
+                            <div class="center-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="clock-controls">
+                        <div class="control-group">
+                            <label for="timezone">Saat Dilimi:</label>
+                            <select id="timezone">
+                                <option value="local">Yerel Saat</option>
+                                <option value="UTC">UTC</option>
+                                <option value="Europe/Istanbul">İstanbul</option>
+                                <option value="America/New_York">New York</option>
+                                <option value="Europe/London">Londra</option>
+                                <option value="Asia/Tokyo">Tokyo</option>
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="clockStyle">Saat Stili:</label>
+                            <select id="clockStyle">
+                                <option value="classic">Klasik</option>
+                                <option value="modern">Modern</option>
+                                <option value="minimal">Minimal</option>
+                            </select>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="handColor">Akrep ve Yelkovan Rengi:</label>
+                            <input type="color" id="handColor" value="#333333">
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="secondHandColor">Saniye Rengi:</label>
+                            <input type="color" id="secondHandColor" value="#ff0000">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="world-clock-section">
+                <h2>Dünya Saatleri</h2>
+                <div class="world-clocks-container">
+                    <div class="world-clock-controls">
+                        <button id="addClockBtn">Yeni Saat Ekle</button>
+                        <button id="resetClocksBtn">Saatleri Sıfırla</button>
+                    </div>
+                    <div class="world-clocks" id="worldClocks">
+                        <!-- Dinamik olarak saatler eklenecek -->
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2023 Analog Saat ve Dünya Saati Projesi</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
