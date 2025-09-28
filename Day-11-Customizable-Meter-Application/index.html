@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özelleştirilebilir Sayaç Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Özelleştirilebilir Sayaç Uygulaması</h1>
+        
+        <div class="input-section">
+            <label for="dateInput">Hedef Tarih:</label>
+            <input type="date" id="dateInput">
+            
+            <label for="timeInput">Hedef Saat:</label>
+            <input type="time" id="timeInput">
+            
+            <button id="startButton">Sayaç Başlat</button>
+            <button id="resetButton">Sıfırla</button>
+        </div>
+        
+        <div class="countdown-section">
+            <div class="countdown-display">
+                <div class="time-unit">
+                    <span id="days">00</span>
+                    <div class="label">Gün</div>
+                </div>
+                <div class="time-unit">
+                    <span id="hours">00</span>
+                    <div class="label">Saat</div>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes">00</span>
+                    <div class="label">Dakika</div>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds">00</span>
+                    <div class="label">Saniye</div>
+                </div>
+            </div>
+            
+            <div class="message" id="message"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
