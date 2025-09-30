@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF ve Görüntü Önizleyici</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF ve Görüntü Önizleyici</h1>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-content">
+                <div class="upload-icon">📁</div>
+                <p>Dosyalarınızı buraya sürükleyip bırakın</p>
+                <p class="or-text">veya</p>
+                <button class="file-select-btn" id="fileSelectBtn">Dosya Seç</button>
+                <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.gif" hidden>
+            </div>
+        </div>
+        
+        <div class="preview-container" id="previewContainer" style="display: none;">
+            <div class="preview-header">
+                <h2 id="fileName">Dosya Önizleme</h2>
+                <button class="close-btn" id="closeBtn">×</button>
+            </div>
+            <div class="preview-content">
+                <div id="imagePreview" class="preview-section"></div>
+                <div id="pdfPreview" class="preview-section">
+                    <div class="pdf-controls">
+                        <button id="prevPage" class="page-btn">Önceki</button>
+                        <span id="pageInfo">Sayfa: <span id="currentPage">1</span> / <span id="totalPages">1</span></span>
+                        <button id="nextPage" class="page-btn">Sonraki</button>
+                    </div>
+                    <canvas id="pdfCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <div class="file-info" id="fileInfo" style="display: none;">
+            <p>Dosya Adı: <span id="infoFileName"></span></p>
+            <p>Boyut: <span id="infoFileSize"></span></p>
+            <p>Tür: <span id="infoFileType"></span></p>
+        </div>
+    </div>
+    
+    <!-- PDF.js kütüphaneleri -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
