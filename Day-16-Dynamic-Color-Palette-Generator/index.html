@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamik Renk Paleti Oluşturucu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dinamik Renk Paleti Oluşturucu</h1>
+            <p>Bir ana renk seçin ve farklı renk şemalarını keşfedin</p>
+        </header>
+
+        <main>
+            <section class="color-input-section">
+                <div class="input-group">
+                    <label for="color-picker">Ana Renk Seçin:</label>
+                    <div class="input-container">
+                        <input type="color" id="color-picker" value="#3498db">
+                        <input type="text" id="hex-input" placeholder="#3498db">
+                    </div>
+                </div>
+            </section>
+
+            <section class="scheme-selector">
+                <h2>Renk Şeması Seçin</h2>
+                <div class="scheme-options">
+                    <button class="scheme-btn active" data-scheme="monochromatic">Monokromatik</button>
+                    <button class="scheme-btn" data-scheme="complementary">Tamamlayıcı</button>
+                    <button class="scheme-btn" data-scheme="analogous">Analog</button>
+                    <button class="scheme-btn" data-scheme="triadic">Triadic</button>
+                    <button class="scheme-btn" data-scheme="tetradic">Tetradic</button>
+                </div>
+            </section>
+
+            <section class="color-palette">
+                <h2>Renk Paleti</h2>
+                <div id="palette-container" class="palette-container">
+                    <!-- Renk paleti burada dinamik olarak oluşturulacak -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast" class="toast">HEX kodu panoya kopyalandı!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
