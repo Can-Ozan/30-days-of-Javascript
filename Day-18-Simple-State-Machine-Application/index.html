@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durum Makinesi Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Durum Makinesi Uygulaması</h1>
+        <div class="state-machine">
+            <div class="light-container">
+                <div id="light" class="light off"></div>
+                <div class="light-status">
+                    <span id="currentState">Kapalı</span>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="toggleBtn" class="btn">Işığı Aç</button>
+                <button id="resetBtn" class="btn secondary">Sıfırla</button>
+            </div>
+            
+            <div class="state-info">
+                <h3>Durum Bilgisi</h3>
+                <p id="stateDescription">Işık kapalı durumunda.</p>
+            </div>
+            
+            <div class="transition-log">
+                <h3>Geçiş Geçmişi</h3>
+                <ul id="logList"></ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

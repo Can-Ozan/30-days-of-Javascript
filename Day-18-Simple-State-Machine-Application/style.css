@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.state-machine {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.light-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.light {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.light.off {
+    background-color: #2c3e50;
+    border: 5px solid #34495e;
+}
+
+.light.turning-on {
+    background-color: #f39c12;
+    border: 5px solid #e67e22;
+    animation: pulse 1s infinite;
+}
+
+.light.on {
+    background-color: #f1c40f;
+    border: 5px solid #f39c12;
+    box-shadow: 0 0 20px #f1c40f;
+}
+
+.light.turning-off {
+    background-color: #e67e22;
+    border: 5px solid #d35400;
+    animation: pulse 1s infinite;
+}
+
+.light-status {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:not(.secondary) {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn:not(.secondary):hover {
+    background-color: #2980b9;
+}
+
+.btn.secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.state-info, .transition-log {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.state-info h3, .transition-log h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+#stateDescription {
+    font-style: italic;
+}
+
+.transition-log ul {
+    list-style-type: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.transition-log li {
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    background-color: white;
+    border-radius: 3px;
+    border-left: 4px solid #3498db;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
