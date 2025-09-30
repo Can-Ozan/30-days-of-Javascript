@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basit Animasyon Kütüphanesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Basit Animasyon Kütüphanesi</h1>
+        
+        <div class="demo-area">
+            <div id="animatedBox" class="box"></div>
+        </div>
+        
+        <div class="controls">
+            <h2>Animasyon Kontrolleri</h2>
+            
+            <div class="control-group">
+                <button id="moveRight">Sağa Hareket (100px)</button>
+                <button id="moveDown">Aşağı Hareket (100px)</button>
+                <button id="fadeOut">Opaklığı Azalt</button>
+                <button id="scaleUp">Boyutu Büyüt</button>
+            </div>
+            
+            <div class="control-group">
+                <button id="chainAnimations">Zincirleme Animasyonlar</button>
+                <button id="reset">Sıfırla</button>
+            </div>
+            
+            <div class="code-example">
+                <h3>Kod Örneği:</h3>
+                <pre><code>// Zincirleme animasyon örneği
+animator('#animatedBox')
+    .to({ x: 200 }, 1000, 'easeInOutQuad')
+    .then()
+    .to({ y: 150, opacity: 0.5 }, 800, 'easeOutCubic')
+    .then()
+    .to({ scale: 1.5 }, 600, 'easeInBack');</code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
