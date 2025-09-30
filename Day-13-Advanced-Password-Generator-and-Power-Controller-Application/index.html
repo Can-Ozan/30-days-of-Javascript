@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişmiş Parola Üreticisi ve Güç Denetleyicisi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gelişmiş Parola Üreticisi ve Güç Denetleyicisi</h1>
+            <p>Güvenli parolalar oluşturun ve güçlerini test edin</p>
+        </header>
+
+        <main>
+            <div class="app-container">
+                <!-- Parola Üreticisi Bölümü -->
+                <section class="password-generator">
+                    <h2>Parola Üreticisi</h2>
+                    
+                    <div class="password-display">
+                        <input type="text" id="generated-password" readonly>
+                        <button id="copy-password" class="btn-copy">Kopyala</button>
+                    </div>
+                    
+                    <div class="password-options">
+                        <div class="option-group">
+                            <label for="password-length">Parola Uzunluğu: <span id="length-value">12</span></label>
+                            <input type="range" id="password-length" min="6" max="32" value="12">
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>
+                                <input type="checkbox" id="uppercase" checked>
+                                Büyük Harf (A-Z)
+                            </label>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>
+                                <input type="checkbox" id="lowercase" checked>
+                                Küçük Harf (a-z)
+                            </label>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>
+                                <input type="checkbox" id="numbers" checked>
+                                Rakamlar (0-9)
+                            </label>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>
+                                <input type="checkbox" id="symbols" checked>
+                                Semboller (!@#$%^&*)
+                            </label>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>
+                                <input type="checkbox" id="exclude-similar">
+                                Benzer Karakterleri Hariç Tut (i, l, 1, L, o, 0, O)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button id="generate-password" class="btn-primary">Parola Oluştur</button>
+                </section>
+                
+                <!-- Parola Güç Denetleyicisi Bölümü -->
+                <section class="password-checker">
+                    <h2>Parola Güç Denetleyicisi</h2>
+                    
+                    <div class="password-input">
+                        <input type="password" id="password-input" placeholder="Parolanızı girin...">
+                        <button id="toggle-visibility" class="btn-toggle">Göster</button>
+                    </div>
+                    
+                    <div class="strength-meter">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strength-fill"></div>
+                        </div>
+                        <div class="strength-text" id="strength-text">Parola gücü</div>
+                    </div>
+                    
+                    <div class="password-feedback">
+                        <h3>Güvenlik Önerileri:</h3>
+                        <ul id="feedback-list">
+                            <li class="feedback-item">Parolanızı girin</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="password-stats">
+                        <div class="stat">
+                            <span class="stat-label">Tahmini Kırılma Süresi:</span>
+                            <span class="stat-value" id="crack-time">-</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Olası Kombinasyon:</span>
+                            <span class="stat-value" id="combinations">-</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Güvenli parolalar oluşturun ve düzenli olarak değiştirin!</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
