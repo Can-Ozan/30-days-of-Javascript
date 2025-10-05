@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basit Kanban Tahtası</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kanban Tahtası</h1>
+        <button id="add-task-btn">Yeni Görev Ekle</button>
+    </header>
+    
+    <main class="kanban-board">
+        <div class="column" data-status="todo">
+            <h2>Yapılacaklar</h2>
+            <div class="tasks-container" id="todo-tasks"></div>
+        </div>
+        
+        <div class="column" data-status="in-progress">
+            <h2>Devam Ediyor</h2>
+            <div class="tasks-container" id="in-progress-tasks"></div>
+        </div>
+        
+        <div class="column" data-status="done">
+            <h2>Bitti</h2>
+            <div class="tasks-container" id="done-tasks"></div>
+        </div>
+    </main>
+    
+    <!-- Modal yapısı -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Yeni Görev Ekle</h2>
+            <form id="task-form">
+                <input type="text" id="task-title" placeholder="Görev başlığı" required>
+                <textarea id="task-description" placeholder="Görev açıklaması"></textarea>
+                <button type="submit">Kaydet</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
