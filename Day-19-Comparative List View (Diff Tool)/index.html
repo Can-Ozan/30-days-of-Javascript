@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karşılaştırmalı Liste Görünümü</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Metin Karşılaştırma Aracı</h1>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <h3>Eski Metin</h3>
+                <textarea id="oldText" placeholder="Eski metni buraya yazın..."></textarea>
+            </div>
+            
+            <div class="input-group">
+                <h3>Yeni Metin</h3>
+                <textarea id="newText" placeholder="Yeni metni buraya yazın..."></textarea>
+            </div>
+        </div>
+        
+        <button id="compareBtn">Karşılaştır</button>
+        
+        <div class="result-section">
+            <h3>Karşılaştırma Sonucu</h3>
+            <div class="diff-container">
+                <div class="diff-column">
+                    <h4>Eski Metin</h4>
+                    <div id="oldResult" class="diff-result"></div>
+                </div>
+                
+                <div class="diff-column">
+                    <h4>Yeni Metin</h4>
+                    <div id="newResult" class="diff-result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
