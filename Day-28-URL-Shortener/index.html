@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelişmiş URL Kısaltıcı</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-link"></i> Gelişmiş URL Kısaltıcı</h1>
+            <p>Linklerinizi kısaltın, QR kodları oluşturun ve performansını takip edin</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="url" id="url-input" placeholder="Kısaltmak istediğiniz URL'yi girin..." required>
+                    <button id="shorten-btn">Kısalt</button>
+                </div>
+                
+                <div class="advanced-options">
+                    <div class="option-group">
+                        <label for="custom-alias">Özel Takma Ad (İsteğe bağlı)</label>
+                        <input type="text" id="custom-alias" placeholder="ornek-link">
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="expiration">Son Kullanma Tarihi</label>
+                        <select id="expiration">
+                            <option value="never">Hiçbir zaman</option>
+                            <option value="1">1 gün</option>
+                            <option value="7">1 hafta</option>
+                            <option value="30">1 ay</option>
+                            <option value="365">1 yıl</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-section hidden">
+                <div class="result-card">
+                    <h3>Kısaltılmış URL'niz:</h3>
+                    <div class="result-url">
+                        <input type="text" id="short-url" readonly>
+                        <button id="copy-btn" class="copy-btn"><i class="fas fa-copy"></i> Kopyala</button>
+                    </div>
+                    
+                    <div class="qr-code-container">
+                        <h4>QR Kod:</h4>
+                        <div id="qr-code"></div>
+                        <button id="download-qr" class="download-btn"><i class="fas fa-download"></i> QR Kodunu İndir</button>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Tıklanma Sayısı:</span>
+                            <span id="click-count" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Oluşturulma Tarihi:</span>
+                            <span id="creation-date" class="stat-value">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Son Kullanma:</span>
+                            <span id="expiration-date" class="stat-value">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3>Geçmiş Linkleriniz</h3>
+                <div id="history-list" class="history-list">
+                    <!-- Geçmiş linkler buraya dinamik olarak eklenecek -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Gelişmiş URL Kısaltıcı | Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+
+    <!-- QR Code Kütüphanesi -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
