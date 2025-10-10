@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatura Üretici</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fatura Üretici</h1>
+            <p class="subtitle">Ürün ve fiyat bilgilerinizi girin, faturayı PDF olarak indirin</p>
+        </header>
+        
+        <div class="app-content">
+            <section class="input-section">
+                <h2>Ürün Bilgileri</h2>
+                <div class="form-group">
+                    <label for="productName">Ürün Adı</label>
+                    <input type="text" id="productName" placeholder="Ürün adını girin">
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Fiyat (₺)</label>
+                    <input type="number" id="productPrice" placeholder="Fiyatı girin" min="0" step="0.01">
+                </div>
+                <button id="addProduct">Ürün Ekle</button>
+                <button id="clearAll" class="btn-danger">Tümünü Temizle</button>
+            </section>
+            
+            <section class="invoice-section">
+                <h2>Fatura Önizleme</h2>
+                <div class="invoice-preview" id="invoicePreview">
+                    <div class="empty-message">Henüz ürün eklenmedi. Faturanız burada görünecek.</div>
+                </div>
+                <div class="actions">
+                    <button id="downloadPdf" class="btn-success" disabled>PDF Olarak İndir</button>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>© 2023 Fatura Üretici | Otomatik fatura oluşturma aracı</p>
+        </footer>
+    </div>
+
+    <!-- Kütüphaneler -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- Uygulama JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
