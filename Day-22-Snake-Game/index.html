@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yılan Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Yılan Oyunu</h1>
+        <div class="game-info">
+            <div class="score">Skor: <span id="score">0</span></div>
+            <div class="high-score">En Yüksek Skor: <span id="high-score">0</span></div>
+        </div>
+        <canvas id="game-board" width="400" height="400"></canvas>
+        <div class="controls">
+            <div class="mobile-controls">
+                <button id="up-btn">↑</button>
+                <div>
+                    <button id="left-btn">←</button>
+                    <button id="right-btn">→</button>
+                </div>
+                <button id="down-btn">↓</button>
+            </div>
+            <div class="game-buttons">
+                <button id="start-btn">Başlat</button>
+                <button id="pause-btn">Durdur</button>
+                <button id="reset-btn">Yeniden Başlat</button>
+            </div>
+        </div>
+        <div class="instructions">
+            <p>Yön tuşlarını veya ekrandaki düğmeleri kullanarak yılanı hareket ettirin.</p>
+            <p>Yemi yiyerek puan kazanın. Kendinize veya duvara çarpmayın!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

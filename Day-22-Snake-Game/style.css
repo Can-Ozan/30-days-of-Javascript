@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+    padding: 20px;
+}
+
+.game-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 15px;
+    color: #4CAF50;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#game-board {
+    border: 3px solid #4CAF50;
+    border-radius: 5px;
+    background-color: #000;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.controls {
+    margin-bottom: 15px;
+}
+
+.mobile-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.mobile-controls > div {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.mobile-controls button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+}
+
+.mobile-controls button:active {
+    transform: scale(0.95);
+    background-color: #45a049;
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.game-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+#start-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#pause-btn {
+    background-color: #ff9800;
+    color: white;
+}
+
+#reset-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.game-buttons button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.instructions {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.instructions p {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 500px) {
+    .game-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #game-board {
+        width: 300px;
+        height: 300px;
+    }
+}
