@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafıza Kartları Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hafıza Kartları Oyunu</h1>
+            <div class="game-info">
+                <div class="moves">Hamle: <span id="moves-count">0</span></div>
+                <div class="timer">Süre: <span id="time">0</span>s</div>
+                <button id="restart">Yeniden Başlat</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="game-board" id="game-board"></div>
+        </main>
+        
+        <div class="message" id="message">
+            <div class="message-content">
+                <h2>Tebrikler!</h2>
+                <p>Oyunu <span id="final-moves">0</span> hamlede ve <span id="final-time">0</span> saniyede tamamladınız!</p>
+                <button id="play-again">Tekrar Oyna</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
