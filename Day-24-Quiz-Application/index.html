@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Uygulaması</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <h1>Quiz Uygulaması</h1>
+            <p>Quiz'e hoş geldiniz! Toplam 10 soru bulunmaktadır. Her soru için 15 saniyeniz var.</p>
+            <button id="start-btn" class="btn">Quiz'i Başlat</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="question-counter">Soru <span id="current-question">1</span>/<span id="total-questions">10</span></div>
+                <div class="timer">Kalan Süre: <span id="time-left">15</span>s</div>
+                <div class="score">Skor: <span id="current-score">0</span></div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question-text">Soru buraya gelecek</h2>
+                <div class="options-container">
+                    <button class="option-btn" data-index="0">Seçenek 1</button>
+                    <button class="option-btn" data-index="1">Seçenek 2</button>
+                    <button class="option-btn" data-index="2">Seçenek 3</button>
+                    <button class="option-btn" data-index="3">Seçenek 4</button>
+                </div>
+            </div>
+            
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn" disabled>Sonraki Soru</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h1>Quiz Tamamlandı!</h1>
+            <div class="result-container">
+                <p>Toplam Skorunuz: <span id="final-score">0</span>/<span id="max-score">10</span></p>
+                <p id="result-message"></p>
+            </div>
+            <div class="action-buttons">
+                <button id="restart-btn" class="btn">Tekrar Oyna</button>
+                <button id="review-btn" class="btn">Cevapları İncele</button>
+            </div>
+        </div>
+
+        <div id="review-screen" class="screen">
+            <h1>Cevaplarınızı İnceleyin</h1>
+            <div id="review-container"></div>
+            <button id="back-to-results" class="btn">Sonuçlara Dön</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
