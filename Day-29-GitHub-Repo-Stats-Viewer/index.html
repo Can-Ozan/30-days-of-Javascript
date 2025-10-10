@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Depo Analiz Aracı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fab fa-github"></i> GitHub Depo Analiz Aracı</h1>
+            <p>GitHub depoları hakkında detaylı bilgi ve istatistikler</p>
+        </header>
+
+        <div class="search-section">
+            <div class="input-group">
+                <input type="text" id="repo-url" placeholder="GitHub depo URL'si girin (örn: https://github.com/facebook/react)">
+                <button id="analyze-btn">Analiz Et</button>
+            </div>
+            <div class="examples">
+                <p>Örnek depolar: 
+                    <span class="example-repo" data-repo="facebook/react">React</span>, 
+                    <span class="example-repo" data-repo="vuejs/vue">Vue.js</span>, 
+                    <span class="example-repo" data-repo="angular/angular">Angular</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Depo bilgileri alınıyor...</p>
+        </div>
+
+        <div class="results" id="results">
+            <div class="repo-header">
+                <div class="repo-avatar">
+                    <img id="avatar" src="" alt="Repo Avatar">
+                </div>
+                <div class="repo-info">
+                    <h2 id="repo-name"></h2>
+                    <p id="repo-description"></p>
+                    <div class="repo-meta">
+                        <span><i class="fas fa-star"></i> <span id="stars"></span></span>
+                        <span><i class="fas fa-code-branch"></i> <span id="forks"></span></span>
+                        <span><i class="fas fa-eye"></i> <span id="watchers"></span></span>
+                        <span><i class="fas fa-exclamation-circle"></i> <span id="issues"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Genel İstatistikler</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Oluşturulma Tarihi:</span>
+                        <span id="created-at" class="stat-value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Son Güncelleme:</span>
+                        <span id="updated-at" class="stat-value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Boyut:</span>
+                        <span id="size" class="stat-value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Ana Dil:</span>
+                        <span id="language" class="stat-value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Lisans:</span>
+                        <span id="license" class="stat-value"></span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Katkı İstatistikleri</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Toplam Katkıda Bulunanlar:</span>
+                        <span id="contributors-count" class="stat-value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Son Commit:</span>
+                        <span id="last-commit" class="stat-value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Commit Sayısı:</span>
+                        <span id="commits-count" class="stat-value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Pull Request Sayısı:</span>
+                        <span id="pr-count" class="stat-value"></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Release Sayısı:</span>
+                        <span id="releases-count" class="stat-value"></span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Dil Dağılımı</h3>
+                    <div id="languages-chart" class="chart-container">
+                        <canvas id="languages-canvas"></canvas>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Commit Aktivitesi</h3>
+                    <div id="activity-chart" class="chart-container">
+                        <canvas id="activity-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="additional-info">
+                <div class="info-section">
+                    <h3>Popüler Fork'lar</h3>
+                    <div id="popular-forks" class="forks-list"></div>
+                </div>
+                
+                <div class="info-section">
+                    <h3>Son Release'ler</h3>
+                    <div id="releases" class="releases-list"></div>
+                </div>
+            </div>
+
+            <div class="export-section">
+                <button id="export-pdf" class="export-btn"><i class="fas fa-file-pdf"></i> PDF Olarak İndir</button>
+                <button id="export-json" class="export-btn"><i class="fas fa-file-code"></i> JSON Olarak İndir</button>
+            </div>
+        </div>
+
+        <div class="error" id="error">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

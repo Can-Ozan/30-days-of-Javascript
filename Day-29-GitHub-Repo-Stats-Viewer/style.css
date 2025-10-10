@@ -1,0 +1,344 @@
+:root {
+    --primary-color: #2d3748;
+    --secondary-color: #4a5568;
+    --accent-color: #3182ce;
+    --light-color: #f7fafc;
+    --dark-color: #1a202c;
+    --success-color: #48bb78;
+    --warning-color: #ed8936;
+    --danger-color: #f56565;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f5f7fa;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+header h1 i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+header p {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.search-section {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#repo-url {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+#repo-url:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+#analyze-btn {
+    padding: 12px 25px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+#analyze-btn:hover {
+    background: #2b6cb0;
+}
+
+.examples {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.example-repo {
+    color: var(--accent-color);
+    cursor: pointer;
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.example-repo:hover {
+    color: #2b6cb0;
+}
+
+.loading, .error {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--accent-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error {
+    color: var(--danger-color);
+}
+
+.error i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.results {
+    display: none;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.repo-header {
+    display: flex;
+    padding: 25px;
+    background: var(--primary-color);
+    color: white;
+}
+
+.repo-avatar {
+    margin-right: 20px;
+}
+
+.repo-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.repo-info h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.repo-info p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.repo-meta {
+    display: flex;
+    gap: 20px;
+}
+
+.repo-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 25px;
+}
+
+.stat-card {
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: var(--primary-color);
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.chart-container {
+    height: 200px;
+    margin-top: 10px;
+}
+
+.additional-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 25px 25px;
+}
+
+.info-section h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.forks-list, .releases-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.fork-item, .release-item {
+    padding: 12px;
+    margin-bottom: 10px;
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-color);
+}
+
+.fork-item h4, .release-item h4 {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.fork-item p, .release-item p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.export-section {
+    padding: 20px 25px;
+    background: var(--light-color);
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.export-btn {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.export-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+    .repo-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .repo-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .repo-meta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .additional-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    #repo-url {
+        border-radius: var(--border-radius);
+        margin-bottom: 10px;
+    }
+    
+    #analyze-btn {
+        border-radius: var(--border-radius);
+    }
+}
